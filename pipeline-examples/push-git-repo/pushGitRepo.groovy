@@ -12,6 +12,5 @@ withCredentials([usernamePassword(credentialsId: 'git-pass-credentials-ID', pass
 
 // For SSH private key authentication, try the sshagent step from the SSH Agent plugin.
 sshagent (credentials: ['git-ssh-credentials-ID']) {
-    sh("git tag -a some_tag -m 'Jenkins'")
     sh('git push <REPO> --tags')
 }
